@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="report_invoice_khmer" model="ir.actions.report">
+            <field name="name">Invoice in Khmer</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">account_move_invoice.report_invoice_khmer_document</field>
+            <field name="report_file">account_move_invoice.report_invoice_khmer</field>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="binding_type">report</field>
+        </record>
+
+</odoo>
