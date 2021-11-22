@@ -120,8 +120,9 @@ class BalanceSheetView(models.TransientModel):
 
         def filter_movelines_parents(obj):
             for each in obj:
+                print("$$$$$$$$$$$$$$$$$$$$$$$$", each)
                 if each['report_type'] == 'accounts':
-                    if each['code'] in move_line_accounts:
+                    #if each['code'] in move_line_accounts:
                         report_lines_move.append(each)
                         parent_list.append(each['p_id'])
 
@@ -132,12 +133,12 @@ class BalanceSheetView(models.TransientModel):
 
         filter_movelines_parents(report_lines)
 
-        for rec in report_lines_move:
-            if rec['report_type'] == 'accounts':
-                if rec['code'] in move_line_accounts:
-                    rec['debit'] = move_lines_dict[rec['code']]['debit']
-                    rec['credit'] = move_lines_dict[rec['code']]['credit']
-                    rec['balance'] = move_lines_dict[rec['code']]['balance']
+        # for rec in report_lines_move:
+        #     if rec['report_type'] == 'accounts':
+        #         if rec['code'] in move_line_accounts:
+        #             rec['debit'] = move_lines_dict[rec['code']]['debit']
+        #             rec['credit'] = move_lines_dict[rec['code']]['credit']
+        #             rec['balance'] = move_lines_dict[rec['code']]['balance']
 
         parent_list = list(set(parent_list))
         max_level = 0
@@ -446,7 +447,7 @@ class BalanceSheetView(models.TransientModel):
         # Get move lines base on sql query and Calculate the total balance of move lines
         sql = ('''SELECT l.id AS lid,m.id AS move_id, l.account_id AS account_id,
                     l.date AS ldate, j.code AS lcode, l.currency_id, l.amount_currency, l.ref AS lref,
-                    l.name AS lname, COALESCE(l.debit,0) AS debit, COALESCE(l.credit,0) AS credit, 
+                    l.name AS lname, COALESCE(l.debit,0) AS debit, COALESCE(l.credit,0) AS credit,
                     COALESCE(SUM(l.balance),0) AS balance,\
                     m.name AS move_name, c.symbol AS currency_code,c.position AS currency_position, p.name AS partner_name\
                     FROM account_move_line l\
