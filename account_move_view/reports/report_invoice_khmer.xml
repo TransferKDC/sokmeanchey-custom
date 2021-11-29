@@ -67,18 +67,17 @@
                                         </tr>
                                     </table>
                                 </div>
-
                                 <div>
-                                    <table class="table table-borderless" style="font-size:14px;font-weight:bold; ">
-                                        <tr style="margin-right: 250px; border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
+                                    <table class="table table-borderless" style="font-size:14px;font-weight:bold;">
+                                        <tr style="border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
                                             <td><span>លេខរៀងវិក្កយបត្រ៖ <br/> Invoice N0</span></td>
-                                            <td style="vertical-align: middle;">: <span t-field="o.name"/></td>
+                                            <td style="vertical-align: middle;">: <span t-field="o.ref"/></td>
                                         </tr>
                                         <tr style="margin-right: 250px; border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
                                             <td><span>លេខយោងដៃ៖ <br/> Payment Reference</span></td>
                                             <td style="vertical-align: middle;">: <span t-field="o.payment_reference"/></td>
                                         </tr>
-                                        <tr style="margin-right: 250px; border-bottom: 1px solid black;border-left: 1px solid black;border-right: 1px solid black; ">
+                                        <tr style="border-bottom: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
                                             <td style="padding-top:0px;"><span>កាលបរិច្ឆេទ៖<br/>Date:/dd/mm/yy</span></td>
                                             <td style="vertical-align: middle;padding-top:0px;">: <span t-field="o.invoice_date"/></td>
                                         </tr>
@@ -169,16 +168,34 @@
                                             <t t-esc="'{0:,.2f}'.format(o.amount_total)"/>
                                         </td>
                                     </tr>
-
+                            
                                     <tr style="page-break-inside:avoid" t-if="o.amount_residual != 0.0 and o.amount_residual != o.amount_total">
                                         <td colspan="3" style="text-align:right;font-weight:bold;padding:5px;">ប្រាក់ដែលនៅសល់ / Balance </td>
                                         <td class="text-right" style="border:1px solid black; font-weight:bold;padding:5px;">
                                             <t t-esc="'{0:,.2f}'.format(o.amount_residual)"/>
                                         </td>
                                     </tr>
-        
                                 </tbody>
                             </table>
+                        </div>
+                        <div>
+                            <tr>
+                                <td class="text-right" style="border:1px solid black; font-weight:bold;padding:5px;">                                           
+                                    <t t-if="o.payment_state != 'invoicing_legacy'">
+                                        <t t-set="payments_vals" t-value="o.sudo()._get_reconciled_info_JSON_values()"/>
+                                        <t t-foreach="payments_vals" t-as="payment_vals">
+                                            <tr>
+                                                <td>
+                                                    <i class="oe_form_field text-right oe_payment_label">បង់នៅថ្ងៃទី : <t t-esc="payment_vals['date']" t-options='{"widget": "date"}'/></i>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-esc="payment_vals['amount']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </t>                                            
+                                </td>
+                            </tr>
                         </div>
                         <div style="page-break-inside:avoid;">
                                 <div class="row" style="margin-top:264.56px;font-weight:bold;">
