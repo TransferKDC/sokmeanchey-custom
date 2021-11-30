@@ -19,7 +19,7 @@
                         <t t-set="o" t-value="o.with_context(lang=lang)" />
                         <div>
                             <t t-raw="0"/>
-                            <div class="row header" style="font-size:18px;">
+                            <div class="row header" style="font-size:20px;">
                                 <div class="col-2">
                                     <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height:90px;" alt="Logo"/>
                                 </div>
@@ -43,7 +43,7 @@
                                 <div class="col-6">
                                     <table class="table table-borderless" style="border:1px solid black;font-size:14px;font-weight:bold;">
                                         <tr>
-                                            <td style="width:150px;padding-top:0px;font-size:18px;">
+                                            <td style="width:150px;padding-top:0px;font-size:16px;">
                                                 <span>ឈ្មោះក្រុមហ៊ុន ឬ អតិថិជន</span><br/>
                                                 <span>Company Name/Customer</span>
                                             </td>
@@ -70,12 +70,12 @@
                                 <div>
                                     <table class="table table-borderless" style="font-size:18px;font-weight:bold;width:200px;">
                                         <tr style="width:200px; border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
-                                            <td><span style="font-size:18px;">លេខបង្កាន់ដៃយោងការបង់ប្រាក់៖ <br/> Payment Reference</span></td>
+                                            <td><span style="font-size:16px;">លេខបង្កាន់ដៃយោងការបង់ប្រាក់៖ <br/> Payment Reference</span></td>
                                             <td style="vertical-align: middle;font-size:18px;">: <span t-field="o.payment_reference"/></td>
                                         </tr>
 
                                         <tr style="width:200px;border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
-                                            <td><span style="font-size:18px;">លេខរៀងវិក្កយបត្រក្នុងប្រព័ន្ធគ្រប់គ្រង៖ <br/> Invoice N0​ in System</span></td>
+                                            <td><span style="font-size:16px;">លេខរៀងវិក្កយបត្រក្នុងប្រព័ន្ធគ្រប់គ្រង៖ <br/> Invoice N0​ in System</span></td>
                                             <td style="vertical-align: middle;font-size:18px;">: <span t-field="o.name"/></td>
                                         </tr>
                                         
