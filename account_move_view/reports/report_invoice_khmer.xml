@@ -24,7 +24,7 @@
                                     <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height:90px;" alt="Logo"/>
                                 </div>
                                 <div class="col-9" style="text-align:center;margin-top:10px;">
-                                    <div style="font-family:'Moul', cursive;"><h5>សុខមានជ័យ</h5></div>
+                                    <div style="font-family:'Moul', cursive;"><h5>ក្រុមហ៊ុន សុខមានជ័យ</h5></div>
                                     <div style="font-family:'Moul', cursive;"><h5>លក់គ្រឿងសំណង់</h5></div>
                                     <div style="font-weight:bold"><h4>Sokmeanchey Co., Ltd</h4></div>
                                     <div style="font-size:16px;"> អាស័យដ្ឋាន: <t t-esc="company.street2"/></div>
@@ -37,13 +37,13 @@
                         <div style="border-bottom:3px solid #300efd; padding-top:15px"/>
                         <div class="page" >
                             <div class="text-center" style="text-align:center;font-family:'Moul',cursive;padding-top:15px;font-size:18px;">
-                                <h5>វិក្កយបត្រ<br/>Invoice</h5>
+                                <h5>វិក័យប័ត្រ<br/>Invoice</h5>
                             </div>
                             <div class="row mb-2">
                                 <div class="col-6">
                                     <table class="table table-borderless" style="border:1px solid black;font-size:14px;font-weight:bold;">
                                         <tr>
-                                            <td style="width:150px;padding-top:0px;">
+                                            <td style="width:150px;padding-top:0px;font-size:16px;">
                                                 <span>ឈ្មោះក្រុមហ៊ុន ឬ អតិថិជន</span><br/>
                                                 <span>Company Name/Customer</span>
                                             </td>
@@ -58,10 +58,10 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width:150px;padding-top:0px;"><span>ទូរស័ព្ទ / Tel</span></td>
+                                                <td style="width:150px;padding-top:0px;font-size:16px;"><span>ទូរស័ព្ទ / Tel</span></td>
                                                 <td style="padding-top:0px;">
-                                                    : <t t-if="o.partner_id.mobile"><span t-field="o.partner_id.mobile"/></t>
-                                                    <t t-if="o.partner_id.phone"><span t-field="o.partner_id.phone"/></t>
+                                                    : <t t-if="o.partner_id.mobile"><span style="font-size:16px;" t-field="o.partner_id.mobile"/></t>
+                                                    <t t-if="o.partner_id.phone"><span style="font-size:16px;" t-field="o.partner_id.phone"/></t>
                                                 </td>
                                             </tr>
                                         </tr>
@@ -69,17 +69,19 @@
                                 </div>
                                 <div>
                                     <table class="table table-borderless" style="font-size:14px;font-weight:bold;width:200px;">
-                                        <tr style="width:200px;border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
-                                            <td><span>លេខរៀងវិក្កយបត្រ៖ <br/> Invoice N0</span></td>
-                                            <td style="vertical-align: middle;">: <span t-field="o.name"/></td>
-                                        </tr>
                                         <tr style="width:200px; border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
-                                            <td><span>លេខបង្កាន់ដៃបង់ប្រាក់៖ <br/> Payment Reference</span></td>
+                                            <td><span>លេខបង្កាន់ដៃយោងការបង់ប្រាក់៖ <br/> Payment Reference</span></td>
                                             <td style="vertical-align: middle;">: <span t-field="o.payment_reference"/></td>
                                         </tr>
+
+                                        <tr style="width:200px;border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
+                                            <td><span style="font-size:16px;">លេខរៀងវិក្កយបត្រក្នុងប្រព័ន្ធគ្រប់គ្រង៖ <br/> Invoice N0​ in System</span></td>
+                                            <td style="vertical-align: middle;font-size:16px;">: <span t-field="o.name"/></td>
+                                        </tr>
+                                        
                                         <tr style="width:200px;border-bottom: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
-                                            <td style="padding-top:0px;"><span>កាលបរិច្ឆេទ៖<br/>Date:/dd/mm/yy</span></td>
-                                            <td style="vertical-align: middle;padding-top:0px;">: <span t-field="o.invoice_date"/></td>
+                                            <td style="padding-top:0px;font-size:16px;"><span>កាលបរិច្ឆេទ៖<br/>Date:/dd/mm/yy</span></td>
+                                            <td style="vertical-align: middle;padding-top:0px;font-size:16px;">: <span t-field="o.invoice_date"/></td>
                                         </tr>
                                     </table>
                                 </div>
