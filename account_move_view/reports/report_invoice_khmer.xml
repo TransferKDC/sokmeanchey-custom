@@ -40,10 +40,10 @@
                                 <h5>វិក្កយបត្រ<br/>Invoice</h5>
                             </div>
                             <div class="row mb-2">
-                                <div class="col-8">
+                                <div class="col-6">
                                     <table class="table table-borderless" style="border:1px solid black;font-size:14px;font-weight:bold;">
                                         <tr>
-                                            <td style="width:230px;padding-top:0px;">
+                                            <td style="width:150px;padding-top:0px;">
                                                 <span>ឈ្មោះក្រុមហ៊ុន ឬ អតិថិជន</span><br/>
                                                 <span>Company Name/Customer</span>
                                             </td>
@@ -51,14 +51,14 @@
                                                 <span t-field="o.partner_id.name"/>
                                             </td>
                                             <tr>
-                                                <td style="width:230px;padding-top:0px;"><span>អាស័យដ្ឋាន / Address</span></td>
+                                                <td style="width:150px;padding-top:0px;"><span>អាស័យដ្ឋាន / Address</span></td>
                                                 <td style="padding-top:0px;">
                                                     : <span t-field="o.partner_id.street"/><br/><span t-field="o.partner_id.street2"/>
                                                     <span t-field="o.partner_id.city"/><span t-field="o.partner_id.country_id"/>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width:230px;padding-top:0px;"><span>ទូរស័ព្ទ / Tel</span></td>
+                                                <td style="width:150px;padding-top:0px;"><span>ទូរស័ព្ទ / Tel</span></td>
                                                 <td style="padding-top:0px;">
                                                     : <t t-if="o.partner_id.mobile"><span t-field="o.partner_id.mobile"/></t>
                                                     <t t-if="o.partner_id.phone"><span t-field="o.partner_id.phone"/></t>
@@ -68,16 +68,16 @@
                                     </table>
                                 </div>
                                 <div>
-                                    <table class="table table-borderless" style="font-size:14px;font-weight:bold;">
-                                        <tr style="border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
+                                    <table class="table table-borderless" style="font-size:14px;font-weight:bold;width:200px;">
+                                        <tr style="width:200px;border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
                                             <td><span>លេខរៀងវិក្កយបត្រ៖ <br/> Invoice N0</span></td>
                                             <td style="vertical-align: middle;">: <span t-field="o.ref"/></td>
                                         </tr>
-                                        <tr style="margin-right: 250px; border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
+                                        <tr style="width:200px; border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
                                             <td><span>លេខយោងដៃ៖ <br/> Payment Reference</span></td>
                                             <td style="vertical-align: middle;">: <span t-field="o.payment_reference"/></td>
                                         </tr>
-                                        <tr style="border-bottom: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
+                                        <tr style="width:200px;border-bottom: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
                                             <td style="padding-top:0px;"><span>កាលបរិច្ឆេទ៖<br/>Date:/dd/mm/yy</span></td>
                                             <td style="vertical-align: middle;padding-top:0px;">: <span t-field="o.invoice_date"/></td>
                                         </tr>
@@ -186,10 +186,12 @@
                                         <t t-foreach="payments_vals" t-as="payment_vals">
                                             <tr>
                                                 <td>
-                                                    <i class="oe_form_field text-right oe_payment_label">បង់នៅថ្ងៃទី : <t t-esc="payment_vals['date']" t-options='{"widget": "date"}'/></i>
+                                                    <i class="oe_form_field text-right oe_payment_label">បង់នៅថ្ងៃទី : <t t-esc="payment_vals['date']" t-options='{"widget": "date"}' />  </i>
                                                 </td>
+                            
                                                 <td class="text-right">
-                                                    <span t-esc="payment_vals['amount']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                    ​   <span>​​​​​ ចំនួន: <t t-esc="payment_vals['amount']" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/> </span>
+                                                    
                                                 </td>
                                             </tr>
                                         </t>
