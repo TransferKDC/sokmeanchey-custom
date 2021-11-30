@@ -43,11 +43,11 @@
                                 <div class="col-6">
                                     <table class="table table-borderless" style="border:1px solid black;font-size:14px;font-weight:bold;">
                                         <tr>
-                                            <td style="width:150px;padding-top:0px;font-size:16px;">
+                                            <td style="width:150px;padding-top:0px;font-size:18px;">
                                                 <span>ឈ្មោះក្រុមហ៊ុន ឬ អតិថិជន</span><br/>
                                                 <span>Company Name/Customer</span>
                                             </td>
-                                            <td style="vertical-align: middle;padding-top:0px;">:
+                                            <td style="vertical-align: middle;padding-top:0px;font-size:18px;">:
                                                 <span t-field="o.partner_id.name"/>
                                             </td>
                                             <tr>
@@ -60,28 +60,28 @@
                                             <tr>
                                                 <td style="width:150px;padding-top:0px;font-size:16px;"><span>ទូរស័ព្ទ / Tel</span></td>
                                                 <td style="padding-top:0px;">
-                                                    : <t t-if="o.partner_id.mobile"><span style="font-size:16px;" t-field="o.partner_id.mobile"/></t>
-                                                    <t t-if="o.partner_id.phone"><span style="font-size:16px;" t-field="o.partner_id.phone"/></t>
+                                                    : <t t-if="o.partner_id.mobile"><span style="font-size:18px;" t-field="o.partner_id.mobile"/></t>
+                                                    <t t-if="o.partner_id.phone"><span style="font-size:18px;" t-field="o.partner_id.phone"/></t>
                                                 </td>
                                             </tr>
                                         </tr>
                                     </table>
                                 </div>
                                 <div>
-                                    <table class="table table-borderless" style="font-size:14px;font-weight:bold;width:200px;">
+                                    <table class="table table-borderless" style="font-size:18px;font-weight:bold;width:200px;">
                                         <tr style="width:200px; border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
-                                            <td><span>លេខបង្កាន់ដៃយោងការបង់ប្រាក់៖ <br/> Payment Reference</span></td>
-                                            <td style="vertical-align: middle;">: <span t-field="o.payment_reference"/></td>
+                                            <td><span style="font-size:18px;">លេខបង្កាន់ដៃយោងការបង់ប្រាក់៖ <br/> Payment Reference</span></td>
+                                            <td style="vertical-align: middle;font-size:18px;">: <span t-field="o.payment_reference"/></td>
                                         </tr>
 
                                         <tr style="width:200px;border-top: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
-                                            <td><span style="font-size:16px;">លេខរៀងវិក្កយបត្រក្នុងប្រព័ន្ធគ្រប់គ្រង៖ <br/> Invoice N0​ in System</span></td>
-                                            <td style="vertical-align: middle;font-size:16px;">: <span t-field="o.name"/></td>
+                                            <td><span style="font-size:18px;">លេខរៀងវិក្កយបត្រក្នុងប្រព័ន្ធគ្រប់គ្រង៖ <br/> Invoice N0​ in System</span></td>
+                                            <td style="vertical-align: middle;font-size:18px;">: <span t-field="o.name"/></td>
                                         </tr>
                                         
                                         <tr style="width:200px;border-bottom: 1px solid black;border-left: 1px solid black;border-right: 1px solid black;">
-                                            <td style="padding-top:0px;font-size:16px;"><span>កាលបរិច្ឆេទ៖<br/>Date:/dd/mm/yy</span></td>
-                                            <td style="vertical-align: middle;padding-top:0px;font-size:16px;">: <span t-field="o.invoice_date"/></td>
+                                            <td style="padding-top:0px;font-size:18px;"><span>កាលបរិច្ឆេទ៖<br/>Date:/dd/mm/yy</span></td>
+                                            <td style="vertical-align: middle;padding-top:0px;font-size:18px;">: <span t-field="o.invoice_date"/></td>
                                         </tr>
                                     </table>
                                 </div>
